@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #include "LnB.h"
 #include "BaseAIController.h"
@@ -140,10 +142,10 @@ bool ABaseAIController::SetNextWaypoint()
 		// No waypoint to set
 		if(!CurrentWaypoint || !BlackboardComp)
 			return false;
-		
+
 		// Set our first waypoint
 		BlackboardComp->SetValueAsObject(TargetWaypointKeyName, CurrentWaypoint);
-		
+
 		// Set up our nextwaypoint
 		AAIWaypoint* NewWaypoint = CurrentWaypoint->GetNextWaypoint();
 		if(NewWaypoint)
@@ -176,7 +178,7 @@ bool ABaseAIController::SetNextWaypoint()
 	}
 
 	// No new waypoint
-	return false; 
+	return false;
 }
 
 bool ABaseAIController::SetFleeTarget()

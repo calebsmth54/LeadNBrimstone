@@ -1,5 +1,9 @@
-// Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
+
 #pragma once
+
 #include "GameFramework/GameMode.h"
 #include "LnBGameMode.generated.h"
 
@@ -11,6 +15,3 @@ class ALnBGameMode : public AGameMode
 public:
 	ALnBGameMode();
 };
-
-
-

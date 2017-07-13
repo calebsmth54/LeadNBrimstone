@@ -1,4 +1,6 @@
-// Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #ifndef __LNB_H__
 #define __LNB_H__

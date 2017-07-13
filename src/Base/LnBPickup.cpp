@@ -1,8 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #include "LnB.h"
 #include "LnBPickup.h"
-
 
 // Sets default values
 ALnBPickup::ALnBPickup()
@@ -24,7 +25,7 @@ ALnBPickup::ALnBPickup()
 void ALnBPickup::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame

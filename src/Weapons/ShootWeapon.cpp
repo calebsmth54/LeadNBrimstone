@@ -1,5 +1,7 @@
-//// Fill out your copyright notice in the Description page of Project Settings.
-//
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
+
 #include "LnB.h"
 #include "ShootWeapon.h"
 #include "BaseProjectile.h"

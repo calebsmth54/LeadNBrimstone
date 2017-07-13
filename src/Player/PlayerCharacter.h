@@ -1,11 +1,12 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
+
 #pragma once
+
 #include "Base/LnBCharacter.h"
 #include "PlayerCharacter.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class LNB_API APlayerCharacter : public ALnBCharacter
 {
@@ -58,7 +59,7 @@ protected:
 
 	void StartCrouch();
 	void EndCrouch();
-		
+
 public:
 	APlayerCharacter();
 	virtual void Tick(float Delta) override;
@@ -72,7 +73,7 @@ public:
 	// Callback function for ItemCollisionComp
 	UFUNCTION()
 	void OnItemBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-	
+
 	virtual void FireWeapon() override;
 
 	virtual float TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;

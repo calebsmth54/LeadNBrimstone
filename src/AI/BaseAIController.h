@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #pragma once
 
@@ -7,14 +9,11 @@
 #include "AIController.h"
 #include "BaseAIController.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class LNB_API ABaseAIController : public AAIController
 {
 	GENERATED_BODY()
-	
+
 	UBehaviorTreeComponent* BehaviorComp;
 	UBlackboardComponent* BlackboardComp;
 

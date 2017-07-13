@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #pragma once
 
@@ -18,7 +20,7 @@ class LNB_API ABaseEnemy : public ALnBCharacter
 	FTimerHandle AttackTimer;
 
 protected:
-	// We use this sphere to test whether the player is in attack range 
+	// We use this sphere to test whether the player is in attack range
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "LNB|BaseEnemy")
 	USphereComponent* AgroSphere;
 
@@ -28,7 +30,7 @@ protected:
 
 	UPROPERTY(BlueprintReadWrite, Category = "LNB|BaseEnemy")
 	bool bSensedTarget = false;
-	
+
 	UPROPERTY(BlueprintReadWrite, Category = "LNB|BaseEnemy")
 	bool AttackSuccess = false;
 
@@ -49,7 +51,7 @@ protected:
 
 	UFUNCTION()
 	virtual void OnAgroOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-	
+
 	UFUNCTION()
 	virtual void OnAgroEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
@@ -59,7 +61,7 @@ public:
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
@@ -72,7 +74,7 @@ public:
 	virtual float GetAttackRange() { return AttackRange; }
 
 	virtual float TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
-	
+
 	// Attack Events
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, meta = (DisplayName = "OnAttack"), category = "LNB|BaseEnemy")
 	void OnAttackBPEvent();

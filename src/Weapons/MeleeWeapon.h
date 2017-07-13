@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #pragma once
 
@@ -6,7 +8,7 @@
 #include "MeleeWeapon.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class LNB_API AMeleeWeapon : public ABaseWeapon
@@ -16,7 +18,7 @@ class LNB_API AMeleeWeapon : public ABaseWeapon
 protected:
 	bool bKillBoxActive = false;
 
-	// We use this sphere to test whether the player is in attack range 
+	// We use this sphere to test whether the player is in attack range
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "LNB|MeleeWeapon")
 	UBoxComponent* KillBox;
 

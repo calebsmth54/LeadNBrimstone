@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #include "LnB.h"
 #include "AI/BaseEnemy.h"
@@ -40,7 +42,7 @@ ABaseEnemy::ABaseEnemy()
 	GetCharacterMovement()->MaxWalkSpeed = 300.f;
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
 
-	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
+	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character)
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 
 	// This is the sphere of aggrevation! When a player enters it, we do a line of sight test and then make our bad guy go ape on them!
@@ -171,7 +173,7 @@ void ABaseEnemy::OnAttackFinish()
 	ABaseAIController* AIController = Cast<ABaseAIController>(GetController());
 	if(!Controller)
 		return;
-	
+
 	AIController->OnAttackFinish(AttackSuccess);
 }
 
@@ -189,7 +191,7 @@ FVector ABaseEnemy::GetFleeLocation()
 
 	// Constrain Pitch to 180 and reverse
 	Direction.Yaw = FMath::Sign(Direction.Yaw)*-180.0f;
-	
+
 	// Remove any roll and Pitch Values
 	Direction.Pitch = 0.0f;
 	Direction.Roll = 0.0f;

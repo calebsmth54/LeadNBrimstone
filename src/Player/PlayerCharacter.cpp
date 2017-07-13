@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #include "LnB.h"
 #include "PlayerCharacter.h"
@@ -39,7 +41,7 @@ APlayerCharacter::APlayerCharacter()
 	SideViewCameraComponent->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	SideViewCameraComponent->bUsePawnControlRotation = false; // We don't want the controller rotating the camera
 
-	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
+	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character)
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 
 	NewAimInput = FVector::ZeroVector;
@@ -65,7 +67,7 @@ void APlayerCharacter::Tick(float Delta)
 
 			NewWeaponRot.Pitch = WeaponPitchGoal; //FMath::FInterpConstantTo(OldWeaponPitch, WeaponPitchGoal, Delta, 10.0f);
 			NewWeaponRot.Yaw = GetActorRotation().Yaw;
-			
+
 			EquippedWeapon->SetActorRotation(NewWeaponRot);
 		}
 	}
@@ -79,7 +81,7 @@ void APlayerCharacter::SetupPlayerInputComponent(class UInputComponent* Input)
 	// set up gameplay key bindings
 	Input->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	Input->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
-	
+
 	Input->BindAxis("MoveRight", this, &APlayerCharacter::MoveRight);
 
 	Input->BindAxis("LookUp", this, &APlayerCharacter::LookUp);
@@ -131,7 +133,7 @@ void APlayerCharacter::ChangeWeapon()
 
 	EquippedWeapon->OnUnequip();
 	SavedWeapon = EquippedWeapon;
-	
+
 	EquippedWeapon = TempSwap;
 	EquippedWeapon->OnEquip();
 }
@@ -177,7 +179,7 @@ void APlayerCharacter::EquipWeapon(ABaseWeapon* NewWeapon)
 
 	if(SavedWeapon)
 		SavedWeapon->OnDrop();
-		
+
 	SavedWeapon = EquippedWeapon;
 
 	NewWeapon->OnPickup(this);
@@ -217,4 +219,3 @@ void APlayerCharacter::LifeSpanExpired()
 
 	Super::LifeSpanExpired();
 }
-

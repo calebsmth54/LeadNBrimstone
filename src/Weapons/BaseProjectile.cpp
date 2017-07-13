@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #include "LnB.h"
 #include "BaseProjectile.h"
@@ -31,7 +33,7 @@ ABaseProjectile::ABaseProjectile()
 	MovementComp->InitialSpeed = 2000.0f;
 	MovementComp->MaxSpeed = 2000.0f;
 	MovementComp->ProjectileGravityScale = 0.0f;
-	
+
 	// Setup projectile visaul component
 	VisualComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Projectile_Mesh"));
 	VisualComp->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
@@ -39,7 +41,7 @@ ABaseProjectile::ABaseProjectile()
 	VisualComp->SetRelativeRotation(FRotator(-90.0f, 0.0f, 0.0f));
 	VisualComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	VisualComp->SetupAttachment(RootComponent);
-	
+
 
 	// Kept so that there is a default visual comp to a projectile
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> BulletVisualAsset(TEXT("/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone"));
@@ -99,7 +101,7 @@ void ABaseProjectile::DestroyProjectile()
 	K2_DestroyActor();
 }
 
-ABaseWeapon* ABaseProjectile::GetOwnerWeapon() 
+ABaseWeapon* ABaseProjectile::GetOwnerWeapon()
 {
 	ALnBCharacter* WeaponOwner = Cast<ALnBCharacter>(GetOwner());
 	if(!WeaponOwner)

@@ -1,18 +1,5 @@
 //=============================================================================
 // Shown here with permission from Waden Kane Game Studios, LLC.
-//
-// Description: This is the base weapon class that both our players and enemies
-// use. It provides all of the functionality for firing, but leaves the actual
-// launching of a projectile/traceline to its children classes. This class is
-// derived from ALnBPickup, which provides basic picking up and equipping
-// behavior.
-//
-// Please let me know if you'd like to see this code in full or its child
-// classes.
-//
-// To see the ShootWeapon implementation of Fire, see LnbSample2
-// https://github.com/calebsmth54/Code-Samples/blob/master/LnBSample2.cpp
-//
 //=============================================================================
 
 #include "LnB.h"
@@ -244,7 +231,7 @@ void ABaseWeapon::StartWindup()
 	// If there is remaining time on the timer, use that for our new timer
 	float WindupRemaining = FMath::Max(0.0f, GetWorldTimerManager().GetTimerRemaining(WindupTimer));
 	WindupRemaining = WindupTime - WindupRemaining; // Subtract time left without winding up
-	
+
 	GetWorldTimerManager().SetTimer(WindupTimer, this, &ABaseWeapon::OnWindupComplete, WindupRemaining, false);
 	bWindupComplete = false;
 
@@ -262,7 +249,7 @@ void ABaseWeapon::OnWindupComplete()
 void ABaseWeapon::EndWindup()
 {
 	// Reset windup time
-	// Later on, we'll reuse this remaining time so that the player doesn't have to wait the full wind up time 
+	// Later on, we'll reuse this remaining time so that the player doesn't have to wait the full wind up time
 	float TimeLeft = FMath::Max(0.0f, GetWorldTimerManager().GetTimerRemaining(WindupTimer));
 	TimeLeft = WindupTime - TimeLeft;
 	GetWorldTimerManager().SetTimer(WindupTimer, TimeLeft, false);
@@ -363,7 +350,7 @@ void ABaseWeapon::AttachToPawn(ACharacter* MyCharacter)
 	USkeletalMeshComponent* OwnerMesh = MyCharacter->GetMesh();
 	if(!OwnerMesh)
 		return; // TODO: Add error log
-	
+
 
 	AttachToComponent(OwnerMesh, FAttachmentTransformRules(EAttachmentRule::SnapToTarget, EAttachmentRule::KeepRelative, EAttachmentRule::KeepWorld, false), GetSocketAttachName());
 	SetActorRotation(FRotator(0.0f, MyCharacter->GetActorRotation().Yaw, 0.0f));
@@ -403,7 +390,7 @@ void ABaseWeapon::SetSkeletalMesh(USkeletalMesh* NewMesh)
 
 	if(!SkeletalComp)
 		return;
-	
+
 	SkeletalComp->SkeletalMesh = NewMesh;
 }
 

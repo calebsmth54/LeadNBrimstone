@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #include "LnB.h"
 #include "MeleeWeapon.h"
@@ -70,8 +72,8 @@ void AMeleeWeapon::FireWeapon()
 void AMeleeWeapon::Fire(ALnBCharacter* WeaponOwner, FVector &Location, FVector &Direction)
 {
 	Super::Fire(WeaponOwner, Location, Direction);
-	
-	// Set the time for how long 
+
+	// Set the time for how long
 	GetWorldTimerManager().SetTimer(SwingTimer, this, &AMeleeWeapon::OnSwingFinished, SwingTime, false);
 	GetWorldTimerManager().SetTimer(SwingDelayTimer, this, &AMeleeWeapon::OnSwingDelayOver, SwingDelay, false);
 }
@@ -88,7 +90,7 @@ void AMeleeWeapon::OnSwingDelayOver()
 	bKillBoxActive = true;
 }
 
-void AMeleeWeapon::PostFire() 
+void AMeleeWeapon::PostFire()
 {
 	// Removed this code so that fire time isn't reset.
 }

@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #pragma once
 
@@ -32,7 +34,7 @@ class LNB_API ABaseWeapon : public ALnBPickup
 	FName MuzzleSocketName;
 
 protected:
-	
+
 	// This function handles the actual firing of a traceline, projectile or melee killbox
 	virtual void Fire(ALnBCharacter* WeaponOwner, FVector &Location, FVector &Direction);
 
@@ -41,7 +43,7 @@ protected:
 
 	// Handles burst firing
 	virtual void BurstFire(ALnBCharacter* WeaponOwner, FVector &Location, FVector &Direction);
-	
+
 	// Called after each firing event. *IMPORTANT* Only called once after each burst
 	virtual void PostFire();
 
@@ -69,7 +71,7 @@ protected:
 	//
 	// A timer that controls the firing rate
 	FTimerHandle FireRateTimer;
-	
+
 	// Controls how quickly the weapon can refire
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LNB|BaseWeapon")
 	float FireRate;
@@ -83,7 +85,7 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (DisplayName = "IsWindingUp?"), Category = "LNB|BaseWeapon")
 	bool bWindingUp = false;
-	
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (DisplayName = "IsOverheating?"), Category = "LNB|BaseWeapon")
 	bool bOverheating = false;
 	//
@@ -105,7 +107,7 @@ protected:
 	// Windup Properties
 	//
 	FTimerHandle WindupTimer;
-	
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (DisplayName = "IsWindupComplete?"), Category = "LNB|BaseWeapon")
 	bool bWindupComplete = false;
 
@@ -115,7 +117,7 @@ protected:
 	// End Windup Properties
 
 	// Overheating Properties
-	// 
+	//
 	FTimerHandle OverheatTimer;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LNB|BaseWeapon", Meta = (ClampMin = "0.0", UIMin = "0.0"))
@@ -126,7 +128,7 @@ protected:
 	//
 	// End Overheating Properties
 
-	// Burst Fire Properties 
+	// Burst Fire Properties
 	//
 	int CurrentBurstCount = 0;
 	FTimerHandle BurstTimer;
@@ -143,14 +145,14 @@ protected:
 	//
 	// End Burst Fire Properties
 
-	// Functionality for Attaching Weapon to Owner 
+	// Functionality for Attaching Weapon to Owner
 	//
 	virtual void AttachToPawn(class ACharacter* MyPawn);
 	virtual void DetachFromPawn();
 	//
 	// End Attach to Owner
 
-public:	
+public:
 	ABaseWeapon();
 
 	#if !UE_BUILD_SHIPPING

@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #pragma once
 
@@ -6,13 +8,13 @@
 #include "AIWaypoint.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class LNB_API AAIWaypoint : public ATargetPoint
 {
 	GENERATED_BODY()
-	
+
 #if !UE_BUILD_SHIPPING
 	void UpdateDebugArrow();
 	class UArrowComponent* NextWaypointArrow = NULL;

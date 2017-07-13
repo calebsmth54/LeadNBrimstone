@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #pragma once
 
@@ -32,13 +34,13 @@ protected:
 	//
 	// END LNB Pickup
 
-public:	
+public:
 	// Sets default values for this actor's properties
 	ALnBPickup();
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

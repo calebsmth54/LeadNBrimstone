@@ -1,4 +1,6 @@
-// Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #include "LnB.h"
 #include "LnBCharacter.h"
@@ -28,8 +30,8 @@ ALnBCharacter::ALnBCharacter()
 	GetCharacterMovement()->bRequestedMoveUseAcceleration = false; // Enables instaneous movement instead of an accelerated ramp up
 	GetCharacterMovement()->SetPlaneConstraintNormal(FVector(0.0f, 1.0f, 0.0f)); // By Default, Constrain to the y/z plane
 	GetCharacterMovement()->SetPlaneConstraintEnabled(true);
-	
-	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
+
+	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character)
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 	GetMesh()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 

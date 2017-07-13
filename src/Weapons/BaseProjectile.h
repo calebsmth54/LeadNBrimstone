@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #pragma once
 
@@ -11,7 +13,7 @@ UCLASS()
 class LNB_API ABaseProjectile : public AActor
 {
 	GENERATED_BODY()
-	
+
 protected:
 	float Damage;
 
@@ -21,7 +23,7 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly, category = "LNB|BaseProjectile")
 	UProjectileMovementComponent* MovementComp;
 
-public:	
+public:
 	// Sets default values for this actor's properties
 	ABaseProjectile();
 
