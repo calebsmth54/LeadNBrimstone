@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//=============================================================================
+// Shown here with permission from Waden Kane Game Studios, LLC.
+//=============================================================================
 
 #include "LnB.h"
 #include "BTTask_RetrieveWaypoint.h"
@@ -10,7 +12,7 @@ UBTTask_RetrieveWaypoint::UBTTask_RetrieveWaypoint()
 	NodeName = "Find A Waypoint!";
 	bNotifyTick = false;
 
-	// accept only waypoint keys
+	// Accept only waypoint keys
 	CurrentWaypointKey.AddObjectFilter(this, GET_MEMBER_NAME_CHECKED(UBTTask_RetrieveWaypoint, CurrentWaypointKey), AAIWaypoint::StaticClass());
 }
 
