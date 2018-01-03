@@ -20,7 +20,7 @@ protected:
 
 	// We use this sphere to test whether the player is in attack range
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "LNB|MeleeWeapon")
-	UBoxComponent* KillBox;
+	class UBoxComponent* KillBox;
 
 	FTimerHandle SwingTimer;
 

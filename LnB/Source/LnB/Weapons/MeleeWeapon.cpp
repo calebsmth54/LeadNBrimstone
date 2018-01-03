@@ -2,12 +2,10 @@
 // Shown here with permission from Waden Kane Game Studios, LLC.
 //=============================================================================
 
-#include "LnB.h"
 #include "MeleeWeapon.h"
 #include "Base/LnBCharacter.h"
-
-// Do we need to include this for finding out what type the owner is?
-#include "Player/PlayerCharacter.h"
+#include "Components/BoxComponent.h"
+#include "Player/PlayerCharacter.h" // Do we need to include this for finding out what type the owner is?
 
 /** For debug purposes only! */
 #if !UE_BUILD_SHIPPING

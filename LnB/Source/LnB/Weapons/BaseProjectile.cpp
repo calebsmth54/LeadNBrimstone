@@ -1,9 +1,8 @@
 //=============================================================================
 // Shown here with permission from Waden Kane Game Studios, LLC.
 //=============================================================================
-
-#include "LnB.h"
 #include "BaseProjectile.h"
+#include "LnB.h"
 #include "BaseWeapon.h"
 #include "Base/LnBCharacter.h"
 
@@ -44,7 +43,7 @@ ABaseProjectile::ABaseProjectile()
 
 
 	// Kept so that there is a default visual comp to a projectile
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> BulletVisualAsset(TEXT("/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> BulletVisualAsset(TEXT("/Engine/BasicShapes/Cone.Cone"));
 
 	if( BulletVisualAsset.Succeeded() )
 	{

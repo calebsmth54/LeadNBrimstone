@@ -1,8 +1,6 @@
 //=============================================================================
 // Shown here with permission from Waden Kane Game Studios, LLC.
 //=============================================================================
-
-#include "LnB.h"
 #include "BTTask_RetrieveWaypoint.h"
 #include "AI/BaseAIController.h"
 #include "AI/AIWaypoint.h"

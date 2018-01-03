@@ -22,7 +22,7 @@ class LNB_API ABaseEnemy : public ALnBCharacter
 protected:
 	// We use this sphere to test whether the player is in attack range
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "LNB|BaseEnemy")
-	USphereComponent* AgroSphere;
+	class USphereComponent* AgroSphere;
 
 	// This is the range in which the ai is able to attack a target
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LNB|BaseEnemy")

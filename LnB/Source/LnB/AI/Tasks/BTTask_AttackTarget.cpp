@@ -1,10 +1,8 @@
 //=============================================================================
 // Shown here with permission from Waden Kane Game Studios, LLC.
 //=============================================================================
-
-#include "LnB.h"
-#include "BehaviorTree/BlackboardComponent.h"
 #include "BTTask_AttackTarget.h"
+#include "BehaviorTree/BlackboardComponent.h"
 #include "AI/BaseAIController.h"
 
 UBTTask_AttackTarget::UBTTask_AttackTarget()

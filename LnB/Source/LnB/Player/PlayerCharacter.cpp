@@ -1,9 +1,8 @@
 //=============================================================================
 // Shown here with permission from Waden Kane Game Studios, LLC.
 //=============================================================================
-
-#include "LnB.h"
 #include "PlayerCharacter.h"
+#include "LnB.h"
 #include "Weapons/BaseWeapon.h"
 #include "Base/LnBPickup.h"
 

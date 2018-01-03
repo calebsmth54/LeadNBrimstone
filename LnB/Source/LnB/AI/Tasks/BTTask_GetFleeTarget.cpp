@@ -1,23 +1,21 @@
 //=============================================================================
 // Shown here with permission from Waden Kane Game Studios, LLC.
 //=============================================================================
-
-#include "LnB.h"
-#include "BTTask_GetChargeTarget.h"
+#include "BTTask_GetFleeTarget.h"
 #include "AI/BaseAIController.h"
 #include "AI/BaseEnemy.h"
 
-UBTTask_GetChargeTarget::UBTTask_GetChargeTarget()
+UBTTask_GetFleeTarget::UBTTask_GetFleeTarget()
 {
-	NodeName = "Find a Charge Target";
+	NodeName = "Retrieve the Flee Target";
 	bNotifyTick = false;
 
 	// accept only actors and vectors
-	EnemyTargetKey.AddObjectFilter(this, GET_MEMBER_NAME_CHECKED(UBTTask_GetChargeTarget, EnemyTargetKey), ABaseEnemy::StaticClass());
-	ChargeTargetKey.AddVectorFilter(this, GET_MEMBER_NAME_CHECKED(UBTTask_GetChargeTarget, ChargeTargetKey));
+	EnemyTargetKey.AddObjectFilter(this, GET_MEMBER_NAME_CHECKED(UBTTask_GetFleeTarget, EnemyTargetKey), ABaseEnemy::StaticClass());
+	FleeTargetKey.AddVectorFilter(this, GET_MEMBER_NAME_CHECKED(UBTTask_GetFleeTarget, FleeTargetKey));
 }
 
-EBTNodeResult::Type UBTTask_GetChargeTarget::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
+EBTNodeResult::Type UBTTask_GetFleeTarget::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
 	ABaseAIController* AIController = Cast<ABaseAIController>(OwnerComp.GetAIOwner());
 	if(!AIController)
@@ -31,13 +29,12 @@ EBTNodeResult::Type UBTTask_GetChargeTarget::ExecuteTask(UBehaviorTreeComponent&
 	if(!EnemyCharacter)
 		return EBTNodeResult::Failed;
 
-	if(!ChargeTargetKey.IsSet() || ChargeTargetKey.IsNone())
+	if(!FleeTargetKey.IsSet() || FleeTargetKey.IsNone())
 		return EBTNodeResult::Failed;
-
 
 	FVector ChargeVector = FVector::ZeroVector;
 	ChargeVector.X = FMath::Sign(AICharacter->GetActorLocation().X - EnemyCharacter->GetActorLocation().X);
-	//ChargeVector.X *= AICharacter->GetChargeDistance();
+	//ChargeVector.X *= AICharacter->GetFleeDistance();
 	ChargeVector.Y = EnemyCharacter->GetActorLocation().Y;
 
 	// TODO: Fire trace to prevent character's from running into walls forever
@@ -51,7 +48,8 @@ EBTNodeResult::Type UBTTask_GetChargeTarget::ExecuteTask(UBehaviorTreeComponent&
 	{
 	*/
 
-	OwnerComp.GetBlackboardComponent()->SetValueAsVector(ChargeTargetKey.SelectedKeyName, ChargeVector);
-
+	OwnerComp.GetBlackboardComponent()->SetValueAsVector(FleeTargetKey.SelectedKeyName, ChargeVector);
 	return EBTNodeResult::Succeeded;
 }
+
+

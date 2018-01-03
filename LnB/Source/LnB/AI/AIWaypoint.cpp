@@ -1,8 +1,6 @@
 //=============================================================================
 // Shown here with permission from Waden Kane Game Studios, LLC.
 //=============================================================================
-
-#include "LnB.h"
 #include "AIWaypoint.h"
 #include "Components/ArrowComponent.h"
 

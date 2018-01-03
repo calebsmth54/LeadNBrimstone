@@ -18,10 +18,10 @@ protected:
 	float Damage;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, category = "LNB|BaseProjectile")
-	USphereComponent* CollisionComp;
+	class USphereComponent* CollisionComp;
 
 	UPROPERTY(VisibleDefaultsOnly, category = "LNB|BaseProjectile")
-	UProjectileMovementComponent* MovementComp;
+	class UProjectileMovementComponent* MovementComp;
 
 public:
 	// Sets default values for this actor's properties

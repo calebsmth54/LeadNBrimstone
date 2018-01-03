@@ -1,13 +1,13 @@
 //=============================================================================
 // Shown here with permission from Waden Kane Game Studios, LLC.
 //=============================================================================
-
-#include "LnB.h"
 #include "AI/BaseEnemy.h"
+#include "LnB.h"
 #include "AI/BaseAIController.h"
 #include "Player/PlayerCharacter.h"
 #include "AIWaypoint.h"
 #include "Weapons/BaseWeapon.h"
+#include "Components/SphereComponent.h"
 
 /** For debug purposes only! */
 #if !UE_BUILD_SHIPPING
