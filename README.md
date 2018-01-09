@@ -3,6 +3,7 @@
 Source code for a 3D side-scrolling shooter called Lead N Brimstone.
 
 __Waden Kane Homepage:__ [http://www.wadenkanestudios.com/](http://www.wadenkanestudios.com/)
+
 __Facebook Page:__ [https://www.facebook.com/LeadnBrimstone/](https://www.facebook.com/LeadnBrimstone/)
 
 ## About This Project
@@ -13,7 +14,7 @@ This code has largely sat idle since development stopped on the game in April 20
 
 ## How to View Source Code
 
-Right click the UE4 project file(LnB.ueproject) and select "generate Visual Studio project files". Wait a moment, then open the generated .sln file.
+Right click the UE4 project file (LnB.ueproject) and select "generate Visual Studio project files". Wait a moment, then open the generated .sln file.
 
 To launch the editor, simply double click the .ueproject file and after it finishes building, the ue4 editor will launch.
 

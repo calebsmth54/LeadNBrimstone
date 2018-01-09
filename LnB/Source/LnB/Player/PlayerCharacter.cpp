@@ -139,7 +139,7 @@ void APlayerCharacter::ChangeWeapon()
 
 void APlayerCharacter::StartCrouch()
 {
-	GetCharacterMovement()->NavAgentProps.bCanCrouch = true; // Fuck this fucking variable. Fuck.
+	GetCharacterMovement()->NavAgentProps.bCanCrouch = true;
 	GetCharacterMovement()->bWantsToCrouch = true;
 }
 
